@@ -1,0 +1,2 @@
+﻿
+document.write('<iframe frameborder="0" scrolling="no" height="300" width="300" name="myFrame" src="https://www.aklmko.com/story/2022/5/2/159200/-%D8%AD%D9%82%D8%A7%D8%A6%D9%82-%D9%85%D8%B1%D8%B9%D8%A8%D8%A9-%D8%B9%D9%86-"></iframe>');
