@@ -1,0 +1,2 @@
+﻿
+document.write('<iframe frameborder="0" scrolling="no" height="300" width="300" name="myFrame" src="https://www.aklmko.com/story/2022/5/1/159179/-%D8%A7%D9%95%D9%8A%D9%87-%D8%A7%D9%84%D9%84%D9%8A-%D8%A8%D9%8A%D8%AD%D8%B5%D9%84-%D9%81%D9%8A-%D8%AC%D8%B3%D9%85%D9%86%D8%A7-%D9%84%D9%85%D8%A7-%D9%86%D8%AA%D9%83%D9%87%D8%B1%D8%A8%D8%9F-%D9%88%D9%84%D9%8A%D9%87-%D8%A8%D9%86%D8%AA%D9%83%D9%87%D8%B1%D8%A8-"></iframe>');
