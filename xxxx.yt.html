@@ -1,3 +1,24 @@
+<style> 
+div {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+</style>
+<script>
+$(document).keydown(function(event) {
+  if (event.keyCode == 123) {
+    return false;
+  } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    return false;
+  }
+});
+
+$(document).on("contextmenu", function(e) {
+  e.preventDefault();
+});
+
+</script>
 <div dir="rtl" style="text-align: right;" trbidi="on">
 <script src="https://rawcdn.githack.com/tottijbzy12/soclocos/e6056af8cc5bb5d0a8ba8e54b208b4f858010a8e/proj/js/libs/jqu
 
