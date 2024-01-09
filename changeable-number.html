@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="https://fiddle.jshell.net/css/result-light.css">
+
+      <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">
+
+  <style id="compiled-css" type="text/css">
+    pre {
+   font-size: 90px;
+}
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+    <script src="https://fiddle.jshell.net/js/stringify.js?0caee7812e18f1d37e4aaa4d310ba1c7a4d021c7" charset="utf-8"></script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      
+      }
+    </script>
+</head>
+<body>
+    <!-- Ignore this <div>, it just displays the information about the turorial. If you find it distracting, feel free to delete it. -->
+
+
+<!-- The code for the tutorial starts here -->
+<div id="myNumber"></div>
+<!-- Your number will appear in here -->اضغط <a href="https://fiddle.jshell.net/BenedictLewis/xmPgR/show/no-javascript.html" id="getNumber">هـــنــا</a> للحصول علي رقم تذكره المسابقة.
+<!-- Link to get number. If the user has no JS enabled it will redirect to no-javascript.html -->
+<br /><br />
+
+<pre style="display: none">
+    
+
+     &lt;div id=&quot;myNumber&quot;&gt;&lt;/div&gt;
+     Click &lt;a href=&quot;no-javascript.html&quot; id=&quot;getNumber&quot;&gt;here&lt;/a&gt; to get your number.
+     &lt;script&gt;
+          var link = document.getElementById('getNumber');
+          link.onclick = getNumber;
+          function getNumber() {
+               var minNumber = 0;
+               var maxNumber = 100000;
+               var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber);
+               $('#myNumber').html(randomnumber);
+               return false;
+          }
+     &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+var link = document.getElementById('getNumber'); // Gets the link
+link.onclick = getNumber; // Runs the function on click
+
+function getNumber() {
+    var minNumber = 0; // The minimum number you want
+    var maxNumber = 1000000; // The maximum number you want
+    var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // Generates random number
+    $('#myNumber').html(randomnumber); // Sets content of <div> to number
+    return false; // Returns false just to tidy everything up
+}
+
+// Ignore everything below this, this is just the code that formats the message box above the tutorial resources. You do not need any of this. In fact, if you find it distracting you can delete all of it.
+
+
+
+
+
+
+  //]]></script>
+
+  <script>
+   
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    
+
+</body>
+</html>
